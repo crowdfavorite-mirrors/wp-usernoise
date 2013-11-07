@@ -11,7 +11,7 @@ class UN_Form{
 				<div class="un-types-wrapper">
 					<?php $tags = get_terms(FEEDBACK_TYPE, array('un_orderby_meta' => 'position', 'hide_empty' => false)) ?>
 					<?php foreach($tags as $tag): ?>
-						<a href="#" class="un-feedback-type" data-type="<?php echo $tag->slug ?>"><i class="<?php echo un_get_term_meta($tag->term_id, 'icon') ?>"></i><?php echo esc_html($tag->name)?></a>
+						<a href="#" class="un-feedback-type" data-type="<?php echo $tag->slug ?>"><?php if (!un_get_option(UN_DISABLE_ICONS)): ?><i class="<?php echo un_get_term_meta($tag->term_id, 'icon') ?>"></i><?php endif ?><?php echo esc_html(__($tag->name, 'usernoise'))?></a>
 					<?php endforeach ?>
 					<?php if (isset($tags[0])): ?>
 						<?php $slug = $tags[0] ?>
@@ -28,6 +28,9 @@ class UN_Form{
 			<?php endif ?>
 			<?php if (un_get_option(UN_FEEDBACK_FORM_SHOW_EMAIL)): ?>
 				<?php $un_h->text_field('email', un_get_option(UN_FEEDBACK_EMAIL_PLACEHOLDER), array('id' => 'un-email', 'class' => 'text text-empty'))?>
+			<?php endif ?>
+			<?php if (un_get_option(UN_FEEDBACK_FORM_SHOW_NAME)): ?>
+				<?php $un_h->text_field('name', un_get_option(UN_FEEDBACK_NAME_PLACEHOLDER), array('id' => 'un-name', 'class' => 'text text-empty'))?>
 			<?php endif ?>
 			<?php do_action('un_feedback_form_body') ?>
 			<input type="submit" class="un-submit" value="<?php echo esc_attr(un_submit_feedback_button_text()) ?>" id="un-feedback-submit">

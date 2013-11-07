@@ -26,7 +26,7 @@ class UN_Dashboard{
 				echo("<li>");
 				echo un_get_feedback_type_span(get_the_ID(), false);
 				echo(" ");
-				edit_post_link(get_the_title(), '', '', get_the_ID());
+				edit_post_link(esc_html(get_the_title()), '', '', get_the_ID());
 				echo("");
 				if (un_feedback_has_author(get_the_ID())){
 					echo(' ');

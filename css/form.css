@@ -1,6 +1,11 @@
 .un-feedback-form{
 	position: relative;
 }
+body.rtl .un-feedback-form, 
+body.rtl .un-feedback-form input,
+body.rtl .un-feedback-form textarea{
+	text-align: right;
+}
 #powered-by{
 	float: right;
 	font-family: 'Helvetica Neue', Helvetica, Arial, Verdana, Tahoma, sans-serif;
@@ -10,6 +15,10 @@
 	font-weight: 300 !important;
 	font-size: 10px !important;
 }
+body.rtl #powered-by{
+	float: left;
+}
+
 #powered-by a{
 	color: #444 !important;
 	text-decoration: none;
@@ -111,6 +120,9 @@
 	background-repeat: no-repeat !important;
 	text-shadow: none !important;
 }
+body.rtl .un-feedback-form .un-types-wrapper a{
+	float: right;
+}
 .un-feedback-form .un-types-wrapper a i{
 	 font-size: 120%;
 	 margin-right: 11px;
@@ -168,6 +180,11 @@ a#un-button-settings,
 	float: none;
 	text-shadow: -1px -1px 0px #333;
 	text-decoration: none;
+}
+body.rtl a#un-button-settings{
+	position: absolute;
+	left: 16px;
+	top: 30px;
 }
 .un-feedback-form input[type=submit]{
 	padding-left: 19px;

@@ -124,6 +124,7 @@ jQuery(function($){
 				response = usernoise.helpers.parseJSON(response);
 				if (response.success){
 					$('#un-thankyou').height($('#un-feedback-wrapper').height() + "px")
+					$form.find('textarea').val('').trigger('blur');
 				  $(document).trigger('sent#feedbackform#window.un');
 				} else {
 					self.errors.show(response.errors);

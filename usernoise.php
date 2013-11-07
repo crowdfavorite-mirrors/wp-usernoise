@@ -3,15 +3,15 @@
 Plugin Name: Usernoise
 Plugin URI: http://karevn.com
 Description: Usernoise is a modal contact / feedback form with smooth interface.
-Version: 3.7.4
+Version: 3.7.9
 Author: Nikolay Karev
 Author URI: http://karevn.com
 */
 
 
-define('UN_VERSION', '3.7.4');
+define('UN_VERSION', '3.7.9');
 
-load_plugin_textdomain('usernoise', false, basename(dirname(__FILE__)) . '/languages/');
+load_plugin_textdomain('usernoise', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 
 define('FEEDBACK', 'un_feedback');
 define('FEEDBACK_TYPE', 'feedback_type');
@@ -36,6 +36,10 @@ define('UN_FEEDBACK_EMAIL_PLACEHOLDER', 'feedback_email_placeholder');
 define('UN_FEEDBACK_FORM_SHOW_SUMMARY', 'feedback_form_show_summary');
 define('UN_FEEDBACK_FORM_SHOW_TYPE', 'feedback_form_show_type');
 define('UN_FEEDBACK_FORM_SHOW_EMAIL', 'feedback_form_show_email');
+define('UN_FEEDBACK_FORM_SHOW_NAME', 'feedback_form_show_name');
+define('UN_FEEDBACK_NAME_PLACEHOLDER', 'feedback_form_name_placeholder');
+
+define('UN_PUBLISH_DIRECTLY', 'publish_directly');
 if (!defined('UN_ENABLED')){
 	define('UN_ENABLED', 'enabled');
 }
@@ -45,11 +49,12 @@ define('UN_THANKYOU_TITLE', 'thankyou_title');
 define('UN_THANKYOU_TEXT', 'thankyou_text');
 define('UN_DISABLE_ON_MOBILES', 'disable_on_mobiles');
 define('UN_LOAD_IN_FOOTER', 'load_in_footer');
+require(dirname(USERNOISE_MAIN) .'/vendor/mobile_detect.php');
 require(dirname(USERNOISE_MAIN) .'/vendor/plugin-options-framework/plugin-options-framework.php');
 $un_h = new HTML_Helpers_0_4;
 require(dirname(USERNOISE_MAIN) .'/inc/template.php');
 
-require(usernoise_path('/inc/termmeta-api.php'));
+require(dirname(USERNOISE_MAIN) . '/inc/termmeta-api.php');
 if (is_admin()) require(usernoise_path('/admin/upgrade.php'));
 require(usernoise_path('/admin/settings.php'));
 require(usernoise_path('/inc/model.php'));

@@ -353,6 +353,9 @@ if (!class_exists('Plugin_Options_Framework_Fields_0_2_4')){
 			$attr = array();
 			if (isset($field['disabled']) && $field['disabled'])
 				$attr['disabled'] = 'disabled';
+			if (isset($field['readonly']) && $field['readonly'])
+				$attr['disabled'] = 'readonly';
+			
 			$attr['class'] = $this->field_classes(array('textarea'), $field);
 			$attr['rows'] = isset($field['rows']) ? $field['rows'] : get_option('default_post_edit_rows');
 			$this->h->textarea($this->input_name($field['name']),

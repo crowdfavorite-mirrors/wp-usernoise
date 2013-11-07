@@ -60,13 +60,17 @@ class UN_Model{
 		if (!trim($params['description']))
 			$errors []= __('Please enter the feedback.', 'usernoise');
 		$email = trim(isset($params['email']) ? $params['email'] : '');
+		$name = trim(isset($params['name']) ? $params['name'] : '');
 		if (un_get_option(UN_FEEDBACK_FORM_SHOW_EMAIL) && empty($email) && !is_user_logged_in() || 
 				$email && !is_email($email))
 			$errors []= __('Please enter a valid email address.', 'usernoise');
+		if (un_get_option(UN_FEEDBACK_FORM_SHOW_NAME) && empty($name) && !is_user_logged_in())
+			$errors []= __('Please enter your name.', 'usernoise');
 		return apply_filters('un_validate_feedback', $errors, $params);
 	}
 	
 	public function create_feedback($params){
+		global $un_settings;
 		if (isset($params['title']) && $params['title'])
 			$title = $params['title'];
 		$content = $params['description'];
@@ -74,9 +78,9 @@ class UN_Model{
 			$title = substr($content, 0, 150) . (strlen($content) < 150 ? '' : "…");
 		$id = wp_insert_post(array(
 			'post_type' => FEEDBACK,
-			'post_title' => apply_filters('un_feedback_title', $title, $params),
-			'post_content' => apply_filters('un_feedback_content', $content, $params),
-			'post_status' => 'pending',
+			'post_title' => wp_kses(apply_filters('un_feedback_title', $title, $params), wp_kses_allowed_html()),
+			'post_content' => wp_kses(apply_filters('un_feedback_content', $content, $params), wp_kses_allowed_html()),
+			'post_status' => un_get_option(UN_PUBLISH_DIRECTLY) ? 'publish' : 'pending',
 			'post_author' => 0
 		));
 		$email = isset($params['email']) ? trim($params['email']) : '';
@@ -85,6 +89,8 @@ class UN_Model{
 		if (is_user_logged_in()){
 			add_post_meta($id, '_author', get_current_user_id());
 		}
+		if (isset($params['name']) && trim($params['name']))
+			add_post_meta($id, '_name', wp_kses(trim($params['name']), wp_kses_allowed_html()));
 		wp_set_post_terms($id, $params['type'], FEEDBACK_TYPE);
 		do_action('un_feedback_created', $id, $params);
 		$this->send_admin_message($id, $params);

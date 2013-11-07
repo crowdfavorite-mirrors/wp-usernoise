@@ -1,3 +1,5 @@
+<?php global $un_h ?>
+<?php global $unpro_model ?>
 <div class="submitbox" id="submitpost">
 	<div id="minor-publishing">
 	<?php // Hidden submit button early on so that the browser chooses the right button when form is submitted with Return key ?>
@@ -32,13 +34,16 @@
 		</div><?php // /misc-pub-section ?>
 	<?php endif; ?>
 
-	<?php do_action('post_submitbox_misc_actions'); ?>
 	</div>
 	<div class="clear"></div>
 	</div>
-
+	<div class="misc-pub-section misc-pub-section-last">
+		<?php if ($unpro_model): ?>
+			<span id="timestamp"><?php _e('Status:') ?></span>
+			<?php $un_h->select('un_status', $un_h->hash2options($unpro_model->get_statuses()), $unpro_model->get_feedback_status($post)) ?>
+		<?php endif ?>
+	</div>
 	<div id="major-publishing-actions">
-		<?php do_action('post_submitbox_start'); ?>
 		<div id="delete-action">
 		<?php
 		if ( current_user_can( "delete_post", $post->ID ) ) {
@@ -54,7 +59,7 @@
 			<img src="<?php echo esc_url( admin_url( 'images/wpspin_light.gif' ) ); ?>" class="ajax-loading" id="ajax-loading" alt="" />
 			<?php if ($post->post_status == 'pending'): ?>
 				<input name="original_publish" type="hidden" id="original_publish" value="<?php esc_attr_e('Publish') ?>" />
-				<?php submit_button( __( 'Publish', 'usernoise' ), 'primary', 'publish', false, array( 'tabindex' => '5', 'accesskey' => 'p' ) ); ?>
+				<?php submit_button( __( $unpro_model ? 'Publish' : 'Save', 'usernoise' ), 'primary', 'publish', false, array( 'tabindex' => '5', 'accesskey' => 'p' ) ); ?>
 			<?php else: ?>
 				<input name="original_publish" type="hidden" id="original_publish" value="<?php esc_attr_e('Update') ?>" />
 				<input name="save" type="submit" class="button-primary" id="publish" tabindex="5" accesskey="p" value="<?php esc_attr_e('Update') ?>" />

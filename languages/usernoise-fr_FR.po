@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Usernoise v3.6.1\n"
+"Project-Id-Version: Usernoise v3.7.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-04-25 05:49:34+0000\n"
+"PO-Revision-Date: 2013-05-14 07:19:30+0000\n"
 "Last-Translator: Nikolay Karev <karev.n@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,14 +35,14 @@ msgstr "Ajouter un nouveau commentaire"
 msgid "All feedback types"
 msgstr "Tous types de commentaires"
 
-#: admin/settings.php:91
-#: admin/settings.php:92
+#: admin/settings.php:94
+#: admin/settings.php:95
 #@ usernoise
 msgid "Ask for a summary"
 msgstr "Demander l'objet"
 
-#: admin/settings.php:96
-#: admin/settings.php:97
+#: admin/settings.php:99
+#: admin/settings.php:100
 #@ usernoise
 msgid "Ask for an email"
 msgstr "Demander un email"
@@ -52,12 +52,12 @@ msgstr "Demander un email"
 msgid "Author"
 msgstr "Auteur"
 
-#: admin/settings.php:65
+#: admin/settings.php:68
 #@ usernoise
 msgid "Background color"
 msgstr "Couleur de fond"
 
-#: admin/settings.php:50
+#: admin/settings.php:52
 #@ usernoise
 msgid "Button"
 msgstr "Bouton"
@@ -82,12 +82,12 @@ msgstr "Commentaire introuvable"
 msgid "Feedback not found in Trash"
 msgstr "Commentaire non trouvé dans la corbeille"
 
-#: admin/settings.php:74
+#: admin/settings.php:77
 #@ usernoise
 msgid "Font"
 msgstr "Police"
 
-#: admin/settings.php:78
+#: admin/settings.php:81
 #@ usernoise
 msgid "Form title"
 msgstr "Titre du formulaire"
@@ -98,11 +98,11 @@ msgid "General"
 msgstr "Général"
 
 #: inc/db-upgrade.php:27
-#@ default
+#@ usernoise
 msgid "Idea"
 msgstr "Idée"
 
-#: admin/settings.php:81
+#: admin/settings.php:84
 #@ usernoise
 msgid "Introductional text"
 msgstr "Texte d'introduction"
@@ -138,7 +138,7 @@ msgstr "S'il vous plaît entrez une adresse email valide."
 msgid "Please enter the feedback."
 msgstr "S'il vous plaît entrez un commentaire."
 
-#: admin/settings.php:82
+#: admin/settings.php:85
 #: inc/template.php:126
 #@ usernoise
 msgid "Please tell us what do you think, any kind of feedback is highly appreciated."
@@ -183,7 +183,7 @@ msgstr "Choisir une couleur"
 msgid "Sent on: <b>%1$s</b>"
 msgstr "Envoyé à: <b>%1$s</b>"
 
-#: admin/settings.php:94
+#: admin/settings.php:97
 #@ usernoise
 msgid "Short summary"
 msgstr "Objet"
@@ -193,44 +193,44 @@ msgstr "Objet"
 msgid "Status:"
 msgstr "Statut"
 
-#: admin/settings.php:101
+#: admin/settings.php:104
 #@ usernoise
 msgid "Submit button text"
 msgstr "Envoyer le bouton texte"
 
-#: admin/settings.php:102
+#: admin/settings.php:105
 #: inc/template.php:121
 #@ usernoise
 msgid "Submit feedback"
 msgstr "Soumettre le commentaire"
 
-#: admin/settings.php:55
+#: admin/settings.php:57
 #@ usernoise
 msgid "Text"
 msgstr "Texte"
 
-#: admin/settings.php:62
+#: admin/settings.php:65
 #@ usernoise
 msgid "Text color"
 msgstr "Couleur du texte"
 
-#: admin/settings.php:106
+#: admin/settings.php:109
 #: html/thankyou.php:2
 #@ usernoise
 msgid "Thank you"
 msgstr "Merci"
 
-#: admin/settings.php:103
+#: admin/settings.php:106
 #@ usernoise
 msgid "Thank you screen"
 msgstr "Écran de remerciement"
 
-#: admin/settings.php:105
+#: admin/settings.php:108
 #@ usernoise
 msgid "Thank you screen title"
 msgstr "Titre du remerciement"
 
-#: admin/settings.php:108
+#: admin/settings.php:111
 #@ usernoise
 msgid "Thank you text"
 msgstr "Texte de remerciement"
@@ -269,17 +269,17 @@ msgstr "Paramètres Usernoise"
 msgid "View feedback"
 msgstr "Voir commentaire"
 
-#: admin/settings.php:99
+#: admin/settings.php:102
 #@ usernoise
 msgid "Your email (will not be published)"
 msgstr "Votre email (il ne sera pas publié)"
 
-#: admin/settings.php:85
+#: admin/settings.php:88
 #@ usernoise
 msgid "Your feedback"
 msgstr "Votre commentaire"
 
-#: admin/settings.php:109
+#: admin/settings.php:112
 #: html/thankyou.php:4
 #@ usernoise
 msgid "Your feedback has been received."
@@ -293,7 +293,7 @@ msgctxt "admin"
 msgid "Feedback"
 msgstr "Admin"
 
-#: admin/settings.php:56
+#: admin/settings.php:58
 #@ usernoise
 msgctxt "button"
 msgid "Feedback"
@@ -304,14 +304,14 @@ msgstr "Feedback"
 msgid "feedback"
 msgstr "feedback"
 
-#: admin/settings.php:79
+#: admin/settings.php:82
 #@ usernoise
 msgctxt "form"
 msgid "Feedback"
 msgstr "Formulaire"
 
 #: admin/admin-bar.php:23
-#: admin/settings.php:159
+#: admin/settings.php:162
 #: html/reply-meta-box.php:5
 #: html/window.php:23
 #: inc/template.php:117
@@ -384,29 +384,29 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
-#: admin/settings.php:68
+#: admin/settings.php:71
 #@ usernoise
 msgid "Show border"
 msgstr ""
 
-#: admin/settings.php:52
+#: admin/settings.php:54
 #@ usernoise
 msgid "Position"
-msgstr ""
-
-#: admin/settings.php:119
-#, php-format
-#@ usernoise
-msgid "Notification emails will be sent to: <a href=\"mailto:%s\">%s</a>"
 msgstr ""
 
 #: admin/settings.php:122
 #, php-format
 #@ usernoise
+msgid "Notification emails will be sent to: <a href=\"mailto:%s\">%s</a>"
+msgstr ""
+
+#: admin/settings.php:125
+#, php-format
+#@ usernoise
 msgid "(you can change it at <a href=\"%s\">%s</a> page)."
 msgstr ""
 
-#: admin/settings.php:123
+#: admin/settings.php:126
 #@ default
 msgid "General Options"
 msgstr ""
@@ -428,7 +428,7 @@ msgstr ""
 
 #: inc/model.php:97
 #, php-format
-#@ default
+#@ usernoise
 msgid "A new %s has been submitted. View it: <a href=\"%s\">%s</a>."
 msgstr ""
 
@@ -443,8 +443,8 @@ msgstr ""
 msgid "or"
 msgstr ""
 
-#: admin/settings.php:83
-#: admin/settings.php:110
+#: admin/settings.php:86
+#: admin/settings.php:113
 #@ default
 msgid "This text will be wrapped into &lt;p&gt; tag. You can still use HTML code."
 msgstr ""
@@ -505,59 +505,59 @@ msgstr ""
 msgid "Disable on mobile devices"
 msgstr ""
 
-#: admin/settings.php:58
+#: admin/settings.php:60
 #@ usernoise
 msgid "No icon"
 msgstr ""
 
-#: admin/settings.php:72
-#: admin/settings.php:73
+#: admin/settings.php:75
+#: admin/settings.php:76
 #@ usernoise
 msgid "Form"
 msgstr ""
 
-#: admin/settings.php:85
+#: admin/settings.php:88
 #@ usernoise
 msgid "Textarea placeholder"
 msgstr ""
 
-#: admin/settings.php:87
-#: admin/settings.php:88
+#: admin/settings.php:90
+#: admin/settings.php:91
 #@ usernoise
 msgid "Ask for feedback type"
 msgstr ""
 
-#: admin/settings.php:94
+#: admin/settings.php:97
 #@ usernoise
 msgid "Summary field placeholder"
 msgstr ""
 
-#: admin/settings.php:99
+#: admin/settings.php:102
 #@ usernoise
 msgid "Email field placeholder"
 msgstr ""
 
-#: admin/settings.php:113
+#: admin/settings.php:116
 #@ usernoise
 msgid "Notifications"
 msgstr ""
 
-#: admin/settings.php:115
+#: admin/settings.php:118
 #@ usernoise
 msgid "New feedback received admin notification"
 msgstr ""
 
-#: admin/settings.php:116
+#: admin/settings.php:119
 #@ usernoise
 msgid "Enable"
 msgstr ""
 
-#: admin/settings.php:136
+#: admin/settings.php:139
 #@ usernoise
 msgid "Notifications do not work right?"
 msgstr ""
 
-#: admin/settings.php:137
+#: admin/settings.php:140
 #@ usernoise
 msgid "Check out <a href='http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390?ref=karevn'>All in One Email plugin</a>. It adds email options missing in WordPress natively."
 msgstr ""
@@ -585,17 +585,17 @@ msgstr ""
 #: inc/db-upgrade.php:10
 #@ usernoise
 msgid "Ideas"
-msgstr ""
+msgstr "Idée"
 
 #: inc/db-upgrade.php:10
 #@ usernoise
 msgid "Questions"
-msgstr ""
+msgstr "Questions"
 
 #: inc/db-upgrade.php:10
 #@ usernoise
 msgid "Problems"
-msgstr ""
+msgstr "Problème"
 
 #: inc/db-upgrade.php:10
 #@ usernoise
@@ -605,5 +605,25 @@ msgstr ""
 #: vendor/plugin-options-framework/plugin-options-framework.php:179
 #@ default
 msgid "This page requires JavaScript to be enabled in your browser. Please enable JavaScript."
+msgstr ""
+
+#: admin/settings.php:50
+#@ usernoise
+msgid "Disable icons"
+msgstr ""
+
+#: admin/settings.php:51
+#@ usernoise
+msgid "Use this mode if Usernoise breaks your theme icons in Twitter Bootstrap-based themes"
+msgstr ""
+
+#: admin/settings.php:59
+#@ usernoise
+msgid "Button Icon"
+msgstr ""
+
+#: admin/settings.php:61
+#@ usernoise
+msgid "Icon used on the button. <strong>May conflict with Twitter Bootstrap-based themes</strong>"
 msgstr ""
 

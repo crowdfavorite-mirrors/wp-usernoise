@@ -17,6 +17,11 @@ class UN_Controller {
 	public function action_load_window(){
 		global $un_h;
 		$h = $un_h;
+		$body_class = array();
+		if (is_rtl()){
+			$body_class []= 'rtl';
+		}
+		$body_class = implode(' ', $body_class);
 		require(usernoise_path('/html/window.php'));
 		exit;
 	}
@@ -29,7 +34,8 @@ class UN_Controller {
 			$_REQUEST['description'] = '';
 		if (isset($_REQUEST['email']) && $_REQUEST['email'] == un_get_option(UN_FEEDBACK_EMAIL_PLACEHOLDER))
 			$_REQUEST['email'] = '';
-
+		if (isset($_REQUEST['name']) && $_REQUEST['name'] == un_get_option(UN_FEEDBACK_NAME_PLACEHOLDER))
+			$_REQUEST['name'] = '';
 		$errors = $un_model->validate_feedback_form(stripslashes_deep($_REQUEST));
 		if (empty($errors)){
 			$un_model->create_feedback(stripslashes_deep($_REQUEST));

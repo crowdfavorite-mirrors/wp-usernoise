@@ -2,8 +2,8 @@
 Contributors: karevn
 Tags: feedback, contact, form, contact form, email, ajax, custom, admin, button, russian, dashboard, lightbox, ipad, plugin, jquery, comments, responsive
 Requires at least: 3.2
-Tested up to: 3.5.1
-Stable tag: 3.7.4
+Tested up to: 3.5.2
+Stable tag: 3.7.9
 
 Modal contact / feedback form designed "the Apple way".
 
@@ -13,7 +13,7 @@ Usernoise is a "just works" modal contact / feedback form. It became responsive 
 You will not need to change even a line of code in your site.
 
 = Demo =
-Usernoise demo is available at [karevn.com](http://karevn.com) - a "Feedback" button at the left.
+Usernoise demo is available at [karevn.com](http://usernoise.karevn.com) - a "Feedback" button at the left.
 
 = Go Pro =
 __[Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436?ref=karevn)__ adds even more features, like:
@@ -102,6 +102,26 @@ Having problems or need support? Feel free to email me - karev.n (at) gmail dot 
 3. Admin interface
 
 == Changelog ==
+
+= 3.7.9 = 
+* XSS vulnerabilities fixed.
+* Added "Name" field to the form.
+
+= 3.7.8 =
+* Bug fixed: feedback editor page did not open without Pro installed.
+
+= 3.7.7 =
+* Mobile detection bugfix
+* Improved compatibility for feedback editor.
+
+= 3.7.6 = 
+* Bug fixed that disabled embedded Usernoise if "disable on mobiles" was enabled.
+* Removed the padding left at feedback tabs when icons are disabled
+
+= 3.7.5 =
+* RTL-related CSS fixes
+* Mobile detection using Mobile Detect library by Serban Ghita
+* An option to allow direct publishing.
 
 = 3.7.4 =
 * Warning fixed.

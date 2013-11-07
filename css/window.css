@@ -91,6 +91,9 @@ body,  a{
 	left: 50%;
 	overflow-y: hidden;
 }
+body.rtl #window{
+	text-align: right;
+}
 @media screen and (max-width: 640px){
 	#window{
 		width: 100%;
@@ -120,6 +123,9 @@ body,  a{
 	text-decoration: none;
 	opacity: 0.3;
 	text-indent: -9999px;
+}
+body.rtl #window-close{
+	left: 16px;
 }
 #window-close:hover{
 	opacity: 1;

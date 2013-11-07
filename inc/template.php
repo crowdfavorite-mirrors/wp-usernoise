@@ -7,7 +7,7 @@ function usernoise_url($path){
 }
 
 function usernoise_path($path){
-	return WP_PLUGIN_DIR . '/' . USERNOISE_DIR . $path;
+	return dirname(USERNOISE_MAIN) . $path;
 }
 
 function un_ajax_url($action = null){
@@ -53,6 +53,10 @@ function un_feedback_has_author($id){
 	return $user || $email;
 }
 
+function un_feedback_has_name($id){
+	return get_post_meta($id, '_name', true);
+}
+
 function un_feedback_author_email($id){
 	$email = get_post_meta($id, '_email', true);
 	$user = get_post_meta($id, '_author', true);
@@ -87,6 +91,10 @@ function un_feedback_author_link($id){
 function un_feedback_author_name($id){
 	$email = get_post_meta($id, '_email', true);
 	$user = get_post_meta($id, '_author', true);
+	$name = get_post_meta($id, '_name', true);
+	if ($name){
+		return $name;
+	}
 	if ($user){
 		return get_userdata($user)->display_name;
 	}

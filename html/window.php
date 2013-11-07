@@ -12,7 +12,7 @@
 	<script src="<?php echo esc_attr(usernoise_url('/js/window.js?v=' . UN_VERSION)) ?>"></script>
 	<?php do_action('un_head') ?>
 </head>
-<body>
+<body class="<?php echo $body_class ?>">
 	<div id="window" <?php un_window_class() ?>>
 		<a id="window-close" href="#" title="<?php _e('Close', 'usernoise'); ?>"><?php _e('Close', 'usernoise') ?></a>
 		<div id="viewport" class="clearfix">

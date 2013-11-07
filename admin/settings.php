@@ -38,6 +38,8 @@ class UN_Settings {
 			array('type' => 'checkbox', 'name' => UN_ENABLED, 
 				'title' => __('Enable Usernoise', 'usernoise'), 'label' => __('Enable Usernoise', 'usernoise'),
 				'default' => '0'),
+			array('type' => 'checkbox', 'name' => UN_PUBLISH_DIRECTLY, 'title' => __('Publish feedback directly without approval', 'usernoise'),
+				'label' => __('Publish feedback directly without approval', 'usernoise'), 'default' => 0),
 			array('type' => 'checkbox', 'name' => UN_SHOW_POWERED_BY,
 				'title' => __('Show Powered by', 'usernoise'),
 				'label' => __('Show <strong>"Powered by Usernoise"</strong> link at the modal window. Check this, please!', 'usernoise'),
@@ -99,7 +101,12 @@ class UN_Settings {
 				'title' => __('Ask for an email', 'usernoise'),
 				'label' => __('Ask for an email', 'usernoise'),
 				'default' => '1'),
-				array('type' => 'text', 'name' => UN_FEEDBACK_EMAIL_PLACEHOLDER, 'default' => __('Your email (will not be published)', 'usernoise'), 'title' => __('Email field placeholder', 'usernoise')),
+			array('type' => 'text', 'name' => UN_FEEDBACK_EMAIL_PLACEHOLDER, 'default' => __('Your email (will not be published)', 'usernoise'), 'title' => __('Email field placeholder', 'usernoise')),
+			array('type' => 'checkbox', 'name' => UN_FEEDBACK_FORM_SHOW_NAME,
+				'title' => __('Ask for name', 'usernoise'),
+				'label' => __('Ask for name', 'usernoise'),
+				'default' => '1'),
+			array('type' => 'text', 'name' => UN_FEEDBACK_NAME_PLACEHOLDER, 'default' => __('Your name', 'usernoise'), 'title' => __('Name field placeholder', 'usernoise')),
 			array('type' => 'text', 'name' => UN_SUBMIT_FEEDBACK_BUTTON_TEXT,
 				'title' => __('Submit button text', 'usernoise'),
 				'default' => __('Submit feedback', 'usernoise')),
@@ -141,6 +148,14 @@ class UN_Settings {
 		return $options;
 	}
 	
+	public function is_mobile(){
+		if (function_exists('bnc_wptouch_is_mobile')){
+			return bnc_wptouch_is_mobile();
+		}
+		$mobile_detector = new Mobile_Detect_2_6_2;
+		return $mobile_detector->isMobile();
+	}
+	
 }
 
 $un_settings = new UN_Settings;
@@ -158,12 +173,13 @@ function un_set_option($name, $value){
 }
 
 function un_get_localization_array(){
+	global $un_settings;
 	return apply_filters('un_localization_array', array(
 		'text' => (un_get_option(UN_FEEDBACK_BUTTON_ICON) && !un_get_option(UN_DISABLE_ICONS) ? ("<i class='" . un_get_option(UN_FEEDBACK_BUTTON_ICON) . "'></i>")  : '') . un_get_option(UN_FEEDBACK_BUTTON_TEXT, __('Feedback', 'usernoise')),
 		'style' => sprintf("background-color: %s; color: %s", 
 				un_get_option(UN_FEEDBACK_BUTTON_COLOR), un_get_option(UN_FEEDBACK_BUTTON_TEXT_COLOR)),
 		'class' => implode(' ', un_button_class()),
 		'windowUrl' => un_ajax_url('load_window'),
-		'showButton' => apply_filters('un_show_button', true)
+		'showButton' => apply_filters('un_show_button', un_get_option(UN_DISABLE_ON_MOBILES) ? !$un_settings->is_mobile() : true)
 		));
 }

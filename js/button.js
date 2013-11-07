@@ -17,15 +17,12 @@ jQuery(function($){
 			$('#un-thankyou').find('a').unbind('click');
 			$('#un-thankyou').fadeOut('fast', function(){
 				$('#un-overlay').fadeOut('fast', function(){
-					$('#un-thankyou').remove();
 					$('#un-overlay').remove();
 				});  
 			});
 		}
 		$('#un-overlay').click(closeOverlay).fadeIn('fast', function(){
-			$('#un-thankyou').fadeIn('fast', function(){
-				setTimeout(closeOverlay, 5000);
-			}).find('#un-feedback-close').click(closeOverlay);
+			$('#un-thankyou').fadeIn('fast', function(){setTimeout(closeOverlay, 5000);}).find('#un-feedback-close').click(closeOverlay);
 		});
 	});
 	try{
