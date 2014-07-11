@@ -9,7 +9,7 @@ class UN_Settings {
 		add_action('admin_print_styles-settings_page_usernoise', array($this, '_print_styles'));
 		add_action('admin_enqueue_scripts', array($this, '_enqueue_scripts'), 9);
 		$this->h = new HTML_Helpers_0_4;
-		$this->options = new Plugin_Options_Framework_0_2_4(USERNOISE_MAIN, 
+		$this->options = new Plugin_Options_Framework_0_2_5(USERNOISE_MAIN, 
 			array(), 
 			array('page_title' => __('Usernoise settings', 'usernoise')));
 	}
@@ -17,7 +17,7 @@ class UN_Settings {
 	public function _enqueue_scripts($type){
 		global $submenu_file;
 		if ($type == 'settings_page_usernoise'){
-			wp_enqueue_script('un-chosen', usernoise_url('/vendor/chosen/chosen.jquery.js'));
+			wp_enqueue_script('un-chosen', usernoise_url('/vendor/chosen/chosen.jquery.js'), wp_script_is('jquery-migrate', 'registered') ? array('jquery-migrate') : array());
 			wp_enqueue_script('un_settings', usernoise_url('/js/settings.js'), array('jquery'));
 		}
 	}
@@ -144,18 +144,10 @@ class UN_Settings {
 	public function _all_in_one_promo($options){
 		$options []= array('type' => 'custom', 
 			'title' => __('Notifications do not work right?', 'usernoise'),
-			'html' => __("Check out <a href='http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390?ref=karevn'>All in One Email plugin</a>. It adds email options missing in WordPress natively.", 'usernoise'));
+			'html' => __("Check out <a href='http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390'>All in One Email plugin</a>. It adds email options missing in WordPress natively.", 'usernoise'));
 		return $options;
 	}
-	
-	public function is_mobile(){
-		if (function_exists('bnc_wptouch_is_mobile')){
-			return bnc_wptouch_is_mobile();
-		}
-		$mobile_detector = new Mobile_Detect_2_6_2;
-		return $mobile_detector->isMobile();
-	}
-	
+
 }
 
 $un_settings = new UN_Settings;
@@ -180,6 +172,7 @@ function un_get_localization_array(){
 				un_get_option(UN_FEEDBACK_BUTTON_COLOR), un_get_option(UN_FEEDBACK_BUTTON_TEXT_COLOR)),
 		'class' => implode(' ', un_button_class()),
 		'windowUrl' => un_ajax_url('load_window'),
-		'showButton' => apply_filters('un_show_button', un_get_option(UN_DISABLE_ON_MOBILES) ? !$un_settings->is_mobile() : true)
+		'showButton' => apply_filters('un_show_button', true),
+		'disableOnMobiles' => un_get_option(UN_DISABLE_ON_MOBILES)
 		));
 }

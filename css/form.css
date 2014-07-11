@@ -120,6 +120,9 @@ body.rtl #powered-by{
 	background-repeat: no-repeat !important;
 	text-shadow: none !important;
 }
+a.un-feedback-type{
+	height: auto !important;
+}
 body.rtl .un-feedback-form .un-types-wrapper a{
 	float: right;
 }

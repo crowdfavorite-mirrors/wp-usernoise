@@ -595,7 +595,7 @@ msgstr ""
 
 #: admin/settings.php:119
 #@ usernoise
-msgid "Check out <a href='http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390?ref=karevn'>All in One Email plugin</a>. It adds email options missing in WordPress natively."
+msgid "Check out <a href='http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390'>All in One Email plugin</a>. It adds email options missing in WordPress natively."
 msgstr ""
 
 #: admin/upgrade.php:18

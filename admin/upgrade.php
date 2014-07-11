@@ -1,6 +1,6 @@
 <?php
 class UN_Upgrade {
-	var $pro_url = 'http://codecanyon.net/item/usernoise-advanced-modal-feedback-debug/1420436?ref=karevn';
+	var $pro_url = 'http://codecanyon.net/item/usernoise-advanced-modal-feedback-debug/1420436';
 	var $h;
 
 	function __construct(){
@@ -24,8 +24,8 @@ class UN_Upgrade {
 		if (!isset($parent_file) || $parent_file != 'options-general.php' || $_REQUEST['page'] != 'usernoise')
 			return;
 		$h = $this->h;
-		$h->link_to($h->_img('http://cdn.karevn.com/usernoise/all-in-one-email.png'), 
-			'http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390?ref=karevn',
+		$h->link_to($h->_img('http://cdn.cherrydev.me/usernoise/all-in-one-email.png'),
+			'http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390',
 			array('id' => 'all-in-one-email'));
 	}
 	

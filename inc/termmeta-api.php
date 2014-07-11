@@ -6,6 +6,13 @@ register_activation_hook(__FILE__, 'un_tma_activation_hook');
 function un_tma_activation_hook(){
 	global $wpdb;
 	$wpdb->un_termmeta = $wpdb->prefix . "un_termmeta";
+	$charset_collate = '';
+
+	if ( ! empty($wpdb->charset) )
+		$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+	if ( ! empty($wpdb->collate) )
+		$charset_collate .= " COLLATE $wpdb->collate";
+
 	if($wpdb->get_var("SHOW TABLES LIKE '$wpdb->un_termmeta'") != $wpdb->un_termmeta) {
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		$sql = "CREATE TABLE `$wpdb->un_termmeta` (
@@ -16,7 +23,7 @@ function un_tma_activation_hook(){
 			PRIMARY KEY (`meta_id`),
 			KEY `term_id` (`term_id`),
 			KEY `meta_key` (`meta_key`)
-		);";
+		) $charset_collate;";
 		dbDelta($sql);
 	}
 }

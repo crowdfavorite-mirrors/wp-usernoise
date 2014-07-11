@@ -3,5 +3,5 @@
 	<p>
 		<?php echo un_get_option(UN_THANKYOU_TEXT, __('Your feedback has been received.', 'usernoise')) ?>
 	</p>
-	<a href="#" id="un-feedback-close"><img src="<?php echo usernoise_url('/images/ok.png')?>" id="thankyou-image" alt="Close"></a>
+	<a href="#" id="un-feedback-close"><img src="<?php echo usernoise_url('/images/ok.png')?>" id="thankyou-image" alt="Close"/></a>
 </div>

@@ -1,10 +1,9 @@
 <?php
 
-if ((int)get_option('un_db_revision') < 2)
+if ((int)get_option('un_db_revision') < 3)
 	un_do_db_upgrade();
 
 function un_do_db_upgrade(){
-	
 	global $un_default_options, $wp_roles, $wpdb;
 	$icons = array('idea' => 'icon-lightbulb', 'question' => 'icon-question-sign', 'problem' => 'icon-exclamation-sign', 'praise' => 'icon-heart');
 	$plural = array('idea' => __('Ideas', 'usernoise'), 'question' => __('Questions', 'usernoise'), 'problem' => __('Problems', 'usernoise'), 'praise' => __('Praises', 'usernoise'));
@@ -20,7 +19,8 @@ function un_do_db_upgrade(){
 			PRIMARY KEY (`meta_id`),
 			KEY `un_term_id` (`un_term_id`),
 			KEY `meta_key` (`meta_key`)
-		);";
+
+		) DEFAULT CHARSET=" . $wpdb->charset . ";";
 		dbDelta($sql);
 	}
 	foreach(array(
@@ -41,5 +41,5 @@ function un_do_db_upgrade(){
 	foreach(un_get_capable_roles() as $role)
 		foreach(un_get_feedback_capabilities() as $cap)
 			$wp_roles->add_cap($role, $cap);
-	update_option('un_db_revision', '2');
+	update_option('un_db_revision', '3');
 }

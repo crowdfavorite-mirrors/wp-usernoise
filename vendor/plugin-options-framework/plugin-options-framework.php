@@ -1,13 +1,12 @@
 <?php /* 
 WordPress plugin options framework
-Copyright: Nikolay Karev, http://karevn.com
-Version: 0.2.4
+Version: 0.2.5
 */
 
 require('vendor/html-helpers.php');
 
-if (!class_exists('Plugin_Options_Framework_0_2_4')){
-	class Plugin_Options_Framework_0_2_4{
+if (!class_exists('Plugin_Options_Framework_0_2_5')){
+	class Plugin_Options_Framework_0_2_5{
 		var $plugin_file;
 		var $options;
 		var $renderer;

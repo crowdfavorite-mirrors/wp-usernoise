@@ -10,7 +10,8 @@ class UN_Model{
 
 	public function action_init(){
 		global $wp;
-		$wp->add_query_var('feedback_type_id');
+		if ($wp)
+			$wp->add_query_var('feedback_type_id');
 		$this->register_schema();
 	}
 	
@@ -91,7 +92,8 @@ class UN_Model{
 		}
 		if (isset($params['name']) && trim($params['name']))
 			add_post_meta($id, '_name', wp_kses(trim($params['name']), wp_kses_allowed_html()));
-		wp_set_post_terms($id, $params['type'], FEEDBACK_TYPE);
+		if (isset($params['type']))
+			wp_set_post_terms($id, $params['type'], FEEDBACK_TYPE);
 		do_action('un_feedback_created', $id, $params);
 		$this->send_admin_message($id, $params);
 	}
@@ -99,7 +101,7 @@ class UN_Model{
 	public function send_admin_message($id, $params){
 		if (!un_get_option(UN_ADMIN_NOTIFY_ON_FEEDBACK))
 			return;
-		$type = $params['type'] ? $params['type'] : __('feedback');
+		$type = isset($params['type']) && $params['type'] ? $params['type'] : __('feedback');
 		$message = sprintf(__('A new %s has been submitted. View it: <a href="%s">%s</a>.', 'usernoise'), 
 			$type,
 			admin_url('post.php?action=edit&post=' . $id),
@@ -110,7 +112,7 @@ class UN_Model{
 		$subject = apply_filters('un_admin_notification_subject', 
 			sprintf(__('New %s submitted at %s'), __($type, 'usernoise'), get_bloginfo('name')));
 		$to = apply_filters('un_admin_notification_email', get_option('admin_email'));
-		$headers = apply_filters('un_admin_notification_headers', array('Content-type: text/html'), $id);
+		$headers = apply_filters('un_admin_notification_headers', array(), $id);
 		wp_mail($to, $subject, $message, $headers);
 		do_action('un_admin_notification_sent', $id, $params, $message);
 	}

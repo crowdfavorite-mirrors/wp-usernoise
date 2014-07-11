@@ -501,15 +501,9 @@ msgstr "Bir Renk Seçin"
 msgid "Upgrade to WordPress 3.3 or later to enable WYSIWYG editor"
 msgstr "WordPress 3.3 yükseltme veya daha WYSIWYG editörü etkinleştirmek için"
 
-#: 
-msgid "http://karevn.com"
-msgstr "http://karevn.com"
 
 #: 
 msgid "Usernoise is a modal contact / feedback form with smooth interface."
 msgstr "Usernoise düzgün bir arayüz ile bir modal iletişim / geribildirim şeklidir."
 
-#: 
-msgid "Nikolay Karev"
-msgstr "Nikolay Karev"
 

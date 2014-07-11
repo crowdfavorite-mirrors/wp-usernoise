@@ -1,15 +1,12 @@
 <?php
 /*
 Plugin Name: HTML Helpers
-Plugin URI: http://wordpress.org/extend/plugins/html-helpers/
 Description: Simple HTML rendering API for WordPress
 Version: 0.5-beta
-Author: Nikolay Karev
-Author URI: http://karevn.com
 */
 
 /*
-Copyright (C) Nikolay Karev, karev.n@gmail.com
+Copyright (C) Cherrydev
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

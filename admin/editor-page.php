@@ -41,7 +41,7 @@ class UN_Admin_Editor_Page{
 	}
 	
 	public function _stub_pro_block($post){?>
-		Please <strong><a href="http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436?ref=karevn" class="un-upgrade">Upgrade to Pro</a></strong> to enable this block.
+		Please <strong><a href="http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436" class="un-upgrade">Upgrade to Pro</a></strong> to enable this block.
 	<?php
 	}
 	

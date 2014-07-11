@@ -1,9 +1,9 @@
 === Usernoise modal feedback / contact form ===
-Contributors: karevn
+Contributors: cherrydev
 Tags: feedback, contact, form, contact form, email, ajax, custom, admin, button, russian, dashboard, lightbox, ipad, plugin, jquery, comments, responsive
 Requires at least: 3.2
-Tested up to: 3.5.2
-Stable tag: 3.7.9
+Tested up to: 3.9
+Stable tag: 3.7.13
 
 Modal contact / feedback form designed "the Apple way".
 
@@ -13,10 +13,10 @@ Usernoise is a "just works" modal contact / feedback form. It became responsive 
 You will not need to change even a line of code in your site.
 
 = Demo =
-Usernoise demo is available at [karevn.com](http://usernoise.karevn.com) - a "Feedback" button at the left.
+Usernoise demo is available at [usernoise.cherrydev.me](http://usernoise.cherrydev.me) - a "Feedback" button at the left.
 
 = Go Pro =
-__[Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436?ref=karevn)__ adds even more features, like:
+__[Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436)__ adds even more features, like:
 
 * Public feedback comments
 * CSS customization for every piece of public interface.
@@ -43,11 +43,11 @@ __[Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedba
 * WordPress 3.2 is required.
 
 = No-WordPress version =
-__[Non-WordPress version](http://codecanyon.net/item/usernoise-modal-contact-feedback-form/3461759?ref=karevn)__ is available at CodeCanyon.
+__[Non-WordPress version](http://codecanyon.net/item/usernoise-modal-contact-feedback-form/3461759)__ is available at CodeCanyon.
 
 = Translations =
 If you need Usernoise in your language which is not supported currently - you can help Usernoise by 
-translating it. Don't worry, translating is extremely easy - just [download a localization template](http://plugins.svn.wordpress.org/usernoise/languages/usernoise.pot), edit it with your favorite text editor and send to email karev.n (at) gmail dot com. Your help will be really appreciated.
+translating it. Don't worry, translating is extremely easy - just [download a localization template](http://plugins.svn.wordpress.org/usernoise/languages/usernoise.pot), edit it with your favorite text editor and send to email hello (dot) cherrydev (at) gmail dot com. Your help will be really appreciated.
 
 __Available translations__
 
@@ -56,6 +56,7 @@ __Available translations__
 * Brazilian - by Ricardo Silva
 * Bulgarian - by Димитър Митев
 * Chineze - by Song Zou
+* Czech - by Ondřej Fiala
 * Dutch - by Reggie Biemans
 * Finnish - by Teijo Kulmala
 * French - by Brad Coudray
@@ -67,7 +68,7 @@ __Available translations__
 * Polish - by Konrad Sztumski
 * Portuguese - by rasilva
 * Romanian - by Alexis Selăgianu
-* Russian - by Nikolay Karev
+* Russian
 * Spanish - by Dario Doidos
 * Swedish - by  Mattias Thurfjell
 * Tamil - by Bagerathan Sivarajah
@@ -76,7 +77,7 @@ __Available translations__
 
 
 = Support =
-Having problems or need support? Feel free to email me - karev.n (at) gmail dot com or [open a support topic](http://wordpress.org/tags/usernoise?forum_id=10#postform).
+Having problems or need support? Feel free to email me - cherry (dot) dev (at) gmail (dot) com or [open a support topic](http://wordpress.org/tags/usernoise?forum_id=10#postform).
 
 == Installation ==
 
@@ -87,21 +88,32 @@ Having problems or need support? Feel free to email me - karev.n (at) gmail dot 
 == Frequently Asked Questions ==
 
 1. **Usernoise button does not show after installation** - <strong>Check if your theme has `<?php wp_head(); ?>`</strong> call at `header.php`. Also check if some of your plugins install their own jQuery versions. Feel free to contact me for help.
-2. **I have problems with notification email delivery** - It is a generic WordPress problem with outgoing emails. You can use [All In One Email plugin](http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390?ref=karevn) to fix it and have HTML emails instead of plain text.
-3. **Can I open a feedback window using some other button?** - yes, you just need to upgrade to [Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436?ref=karevn).
+2. **I have problems with notification email delivery** - It is a generic WordPress problem with outgoing emails. You can use [All In One Email plugin](http://codecanyon.net/item/all-in-one-email-for-wordpress/1290390) to fix it and have HTML emails instead of plain text.
+3. **Can I open a feedback window using some other button?** - yes, you just need to upgrade to [Usernoise Pro](http://codecanyon.net/item/usernoise-pro-advanced-modal-feedback-debug/1420436).
 4. **When I fill the feedback form and click "Submit feedback" button - the loader spins, and nothing happens** - most probably, you have `define('FORCE_SSL_ADMIN', true);` in your `wp-config.php`, also check if you have Site Url option at the general settings page equal to actual site url (www prefix matters!).
 4. **Is Usernoise spam-proof?** -- Yes, it almost is. Let me know if you are receiving a lot of spam with Usernoise - I'll try to help.
-5. **I need Usernoise in my language** - [Download a localization template](http://plugins.svn.wordpress.org/usernoise/languages/usernoise.pot), edit it with your favorite text editor, and send me to `karev.n (at) gmail dot com`. I will include your translation and credits into the next Usernoise release. It takes 2-3 days usually.
+5. **I need Usernoise in my language** - [Download a localization template](http://plugins.svn.wordpress.org/usernoise/languages/usernoise.pot), edit it with your favorite text editor, and send me to `hello.cherrydev (at) gmail dot com`. I will include your translation and credits into the next Usernoise release. It takes 2-3 days usually.
 7. **Can I add some custom fields to Usernoise form?** - Yes, you can, but it requires some coding skills. Use `un_feedback_form_body` action and `un_validate_feedback` filter.
 8. **Usernoise is missing /some feature/** - Feel free to contact me! I really appreciate new ideas.
 
 == Screenshots ==
 
-1. Usernoise form on Nikolay Karev`s site.
+1. Usernoise form.
 2. Admin bar with "New usernoise records" notification.
 3. Admin interface
 
 == Changelog ==
+
+= 3.7.12 =
+* DB revision bumped to fix the problem for upgrades.
+
+= 3.7.11 =
+* Fix: feedback category tabs did not show if 3.7.10 was the first version installed.
+
+= 3.7.10 =
+* Czech language added.
+* Hebrew language added.
+* Deutsch localisation updated.
 
 = 3.7.9 = 
 * XSS vulnerabilities fixed.
@@ -225,7 +237,7 @@ bullet-proof
 
 = 1.0.5 =
 * Minor Javascript API extension
-* CSS compatibility fix for [Avisio theme](http://themeforest.net/item/avisio-business-and-portfolio/113278?ref=karevn)
+* CSS compatibility fix for [Avisio theme](http://themeforest.net/item/avisio-business-and-portfolio/113278)
 
 = 1.0.4 =
 * Workaround for Windows hosting problem
